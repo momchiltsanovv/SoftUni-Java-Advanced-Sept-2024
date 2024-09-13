@@ -10,7 +10,6 @@ public class _06_RecursiveFibonacci {
     public static void main(String[] args) {
         Scanner sc = new Scanner(in);
 
-
         int number = Integer.parseInt(sc.nextLine());
         memory = new long[number + 1];
 
