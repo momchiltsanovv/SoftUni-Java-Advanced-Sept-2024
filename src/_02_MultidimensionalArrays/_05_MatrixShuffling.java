@@ -43,7 +43,6 @@ public class _05_MatrixShuffling {
             printMatrix(matrix);
             input = sc.nextLine().split("\\s+");
         }
-
     }
 
     private static void printMatrix(String[][] matrix) {
