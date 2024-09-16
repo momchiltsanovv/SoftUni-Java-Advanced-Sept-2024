@@ -1,7 +1,6 @@
 package _02_MultidimensionalArrays;
 
-import java.util.Arrays;
-import java.util.Scanner;
+import java.util.*;
 
 import static java.lang.System.in;
 
@@ -9,49 +8,50 @@ public class _11_ReverseMatrixDiagonals {
     public static void main(String[] args) {
         Scanner sc = new Scanner(in);
 
-        int rows = sc.nextInt();
-        int cols = sc.nextInt();
+        int R = sc.nextInt();
         sc.nextLine();
 
-        int[][] matrix = new int[rows][cols];
+        List<List<Integer>> matrix = new ArrayList<>();
 
+        fillMatrix(matrix, R, sc);
 
-        fillMatrix(matrix, sc);
-        printAllDiagonals(matrix);
-
-
-    }
-
-    private static void fillMatrix(int[][] matrix, Scanner sc) {
-        for (int i = 0; i < matrix.length; i++) {
-            matrix[i] = Arrays.stream(sc.nextLine().split(" "))
-                    .mapToInt(Integer::parseInt)
-                    .toArray();
+        int C = matrix.getFirst().size();
+        List<List<Integer>> diagonals = new ArrayList<>();
+        for (int i = 0; i < R + C - 1; i++) {
+            diagonals.add(new ArrayList<>());
         }
 
+        populateDiagonals(diagonals, R, matrix);
+        printDiagonals(diagonals);
+
     }
 
-    private static void printAllDiagonals(int[][] matrix) {
-        for (int row = 0; row < matrix.length; row++) {
-
-            /*
-            23
-            22  13
-            21  12  03 WTF IS PATTERN HEREEEEEEEE
-            20  11  02
-            10  01
-            00
-            */
-
-            for (int cols = 0 ; cols < matrix[row].length; cols++) {
-                System.out.print(matrix[cols][row] + " ");
+    private static void fillMatrix(List<List<Integer>> matrix, int r, Scanner sc) {
+        for (int i = 0; i < r; i++) {
+            String[] line = sc.nextLine().split(" ");
+            List<Integer> row = new ArrayList<>();
+            for (String num : line) {
+                row.add(Integer.parseInt(num));
             }
+            matrix.add(row);
+        }
+    }
 
+    private static void populateDiagonals(List<List<Integer>> diagonals, int r, List<List<Integer>> matrix) {
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < matrix.get(i).size(); j++) {
+                diagonals.get(i + j).add(matrix.get(i).get(j));
+            }
+        }
+    }
+
+    private static void printDiagonals(List<List<Integer>> diagonals) {
+        for (int d = diagonals.size() - 1; d >= 0; d--) {
+            List<Integer> diagonal = diagonals.get(d);
+            for (int i = diagonal.size() - 1; i >= 0; i--) {
+                System.out.print(diagonal.get(i) + " ");
+            }
             System.out.println();
         }
-
-
     }
-
-
 }
