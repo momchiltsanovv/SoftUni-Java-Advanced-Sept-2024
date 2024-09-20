@@ -6,22 +6,67 @@ import static java.lang.System.in;
 
 public class _07_HandsOfCards {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(in);
+        Scanner scanner = new Scanner(System.in);
 
+        Map<String, Set<String>> players = new LinkedHashMap<>();
 
-        String[] input = sc.nextLine().split(":");
-        String name = input[0];
-        List<String> cards = List.of(input[1].split(", "));
-        Map<String, List<String>> info = new LinkedHashMap<>();
+        String line = scanner.nextLine();
 
-        while(!name.equals("JOKER")){
-            info.put(name, new ArrayList<>());
-            info.get(name).addAll(cards);
+        while (!line.equals("JOKER")) {
+            String[] tokens = line.split(": ");
+            String playerName = tokens[0];
+            String[] cards = tokens[1].split(", ");
 
+            players.computeIfAbsent(playerName, k -> new HashSet<>())
+                    .addAll(Arrays.stream(cards).toList());
 
-
+            line = scanner.nextLine();
         }
 
+        players.forEach((key, value) -> {
+                    int points = calculatePoints(value);
+                    System.out.printf("%s: %d\n", key, points);
+                }
+        );
 
+    }
+
+    private static int calculatePoints(Set<String> cards) {
+
+        // io.vavr
+
+        Map<String, Integer> powerMap = new HashMap<>(Map.of("2", 2,
+                "3", 3,
+                "4", 4,
+                "5", 5,
+                "6", 6,
+                "7", 7,
+                "8", 8,
+                "9", 9,
+                "10", 10));
+        powerMap.put("J", 11);
+        powerMap.put("Q", 12);
+        powerMap.put("K", 13);
+        powerMap.put("A", 14);
+
+        Map<String, Integer> typeMap = Map.of("S", 4,
+                "H", 3,
+                "D", 2,
+                "C", 1);
+
+
+        int points = 0;
+
+        for (String card : cards) {
+            String cardPower = card.substring(0, card.length() - 1);
+            String type = String.valueOf(card.charAt(card.length() - 1));
+
+            int power = powerMap.get(cardPower);
+            int typeValue = typeMap.get(type);
+
+            points += power * typeValue;
+        }
+
+        return points;
     }
 }
