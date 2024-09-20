@@ -65,6 +65,7 @@ public class _07_HandsOfCards {
             int typeValue = typeMap.get(type);
 
             points += power * typeValue;
+            //asd
         }
 
         return points;
