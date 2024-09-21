@@ -1,13 +1,12 @@
-package _02_SetsAndMapsAdvanced;
+package _03_SetsAndMapsAdvanced;
 
-import java.util.HashSet;
 import java.util.LinkedHashSet;
 import java.util.Scanner;
 import java.util.Set;
 
 import static java.lang.System.in;
 
-public class SetsOfElements {
+public class _02_SetsOfElements {
     public static void main(String[] args) {
         Scanner sc = new Scanner(in);
 

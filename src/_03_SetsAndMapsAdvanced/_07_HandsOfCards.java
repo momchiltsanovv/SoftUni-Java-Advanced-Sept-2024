@@ -1,8 +1,6 @@
-package _02_SetsAndMapsAdvanced;
+package _03_SetsAndMapsAdvanced;
 
 import java.util.*;
-
-import static java.lang.System.in;
 
 public class _07_HandsOfCards {
     public static void main(String[] args) {
