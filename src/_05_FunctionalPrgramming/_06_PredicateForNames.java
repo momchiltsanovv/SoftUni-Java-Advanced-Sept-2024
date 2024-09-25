@@ -1,13 +1,10 @@
 package _05_FunctionalPrgramming;
 
 import java.util.Arrays;
-import java.util.Collection;
 import java.util.List;
 import java.util.Scanner;
 import java.util.function.Consumer;
-import java.util.function.Function;
 import java.util.function.Predicate;
-import java.util.stream.Collectors;
 import static java.lang.System.in;
 
 
