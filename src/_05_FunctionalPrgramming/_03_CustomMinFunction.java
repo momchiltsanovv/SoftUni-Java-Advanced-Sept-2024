@@ -9,11 +9,11 @@ public class _03_CustomMinFunction {
     public static void main(String[] args) {
         Scanner sc = new Scanner(in);
 
-        int[] numbers = Arrays.stream(sc.nextLine().split("\\s+"))
-                .mapToInt(Integer::parseInt)
-                .toArray();
+        Integer[] numbers = Arrays.stream(sc.nextLine().split("\\s+"))
+                .map(Integer::parseInt)
+                .toArray(Integer[]::new);
 
-        Function<int[], Integer> minNum = list -> {
+        Function<Integer[], Integer> minNum = list -> {
             int min = Integer.MAX_VALUE;
             for (int number : numbers) {
                 if (number < min) {
@@ -22,6 +22,7 @@ public class _03_CustomMinFunction {
             }
             return min;
         };
+
         System.out.println(minNum.apply(numbers));
 
 
