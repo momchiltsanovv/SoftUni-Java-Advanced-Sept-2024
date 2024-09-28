@@ -28,7 +28,7 @@ public class _09_ListOfPredicates {
                 .toList();
 
         System.out.println(result.stream()
-                .map(String::valueOf) // Convert integers to strings
+                .map(String::valueOf)
                 .collect(Collectors.joining(" ")));
 
 
