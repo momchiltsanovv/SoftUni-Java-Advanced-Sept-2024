@@ -27,7 +27,11 @@ public class Main {
             }
 
             int age = -1;
-            if (input[5].matches("\\d+")) { // TODO: outof bounds if no email is given
+            if (email.equals("n/a")) {
+                age = Integer.parseInt(input[4]);
+            }
+
+            if (input[5].matches("\\d+")) { // TODO: out of bounds if no email is given
                 age = Integer.parseInt(input[5]);
             }
 
@@ -43,7 +47,8 @@ public class Main {
 
         String highestAvgDepartment = "";
         for (Map.Entry<String, Double> entry : departmentsWithSalary.entrySet()) {
-            double curSalary = entry.getValue() / departmentsWithNames.get(entry.getKey()).size();;
+            double curSalary = entry.getValue() / departmentsWithNames.get(entry.getKey()).size();
+            ;
             double highestAvgSalary = 0;
             if (highestAvgSalary > curSalary) {
                 highestAvgSalary = curSalary;
