@@ -1,16 +1,15 @@
-package _09_IteratorsAndComparators.ListyIterator;
+package _09_IteratorsAndComparators._02_Collection;
 
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-public class ListyIterator implements Iterable<String> {
-    List<String> elements;
-    String command;
-    int index = 0;
 
-    public ListyIterator(String command, String... elements) {
-        this.command = command;
+public class ListyIteratorUpdated implements Iterable<String> {
+    private final List<String> elements;
+    private int  index = 0;
+
+    public ListyIteratorUpdated(String... elements) {
         this.elements = new ArrayList<>(List.of(elements));
     }
 
@@ -33,6 +32,13 @@ public class ListyIterator implements Iterable<String> {
             System.out.println(elements.get(index));
         }
     }
+
+
+    public void PrintAll() {
+        forEach(e -> System.out.print(e + " "));
+        System.out.println();
+    }
+
 
     public Iterator<String> iterator() {
         return new ListIterator();
