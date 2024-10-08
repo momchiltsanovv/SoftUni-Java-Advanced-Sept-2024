@@ -4,7 +4,6 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
-
 public class ListyIterator implements Iterable<String> {
     List<String> elements;
     String command;
@@ -40,7 +39,6 @@ public class ListyIterator implements Iterable<String> {
     }
 
     private class ListIterator implements Iterator<String> {
-
         int index = 0;
 
         public boolean hasNext() {
@@ -52,9 +50,5 @@ public class ListyIterator implements Iterable<String> {
             index++;
             return element;
         }
-
-
     }
-
-
 }
