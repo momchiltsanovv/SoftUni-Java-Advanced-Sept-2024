@@ -1,12 +1,12 @@
 package _09_IteratorsAndComparators._03_StackIterator;
 
-import java.util.*;
-
+import java.util.Collections;
+import java.util.Iterator;
+import java.util.Stack;
 
 public class StackIter implements Iterable<String> {
 
-    private Stack<String> stack;
-    private int index = 0;
+    private final Stack<String> stack;
 
     public StackIter(String... stack) {
         this.stack = new Stack<>();
@@ -29,15 +29,18 @@ public class StackIter implements Iterable<String> {
         this.stack.push(item);
     }
 
+    public void forEachTwice() {
+        int index = 0;
+        for (int i = stack.size() - 1; i >= index; i--) {
+            System.out.println(stack.get(i));
+        }
 
-    public void forEachD() {
         for (int i = stack.size() - 1; i >= index; i--) {
             System.out.println(stack.get(i));
         }
     }
 
     private class StackIterator implements Iterator<String> {
-
         int index = 0;
 
         public boolean hasNext() {
@@ -45,12 +48,7 @@ public class StackIter implements Iterable<String> {
         }
 
         public String next() {
-
             return stack.get(index++);
         }
-
-
     }
-
-
 }

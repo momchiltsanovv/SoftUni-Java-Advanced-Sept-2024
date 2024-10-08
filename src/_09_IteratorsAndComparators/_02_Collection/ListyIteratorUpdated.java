@@ -7,7 +7,7 @@ import java.util.List;
 
 public class ListyIteratorUpdated implements Iterable<String> {
     private final List<String> elements;
-    private int  index = 0;
+    private int index = 0;
 
     public ListyIteratorUpdated(String... elements) {
         this.elements = new ArrayList<>(List.of(elements));

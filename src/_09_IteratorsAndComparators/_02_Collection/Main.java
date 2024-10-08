@@ -12,12 +12,12 @@ public class Main {
 
         String[] command = sc.nextLine().split("\\s+");
 
-        String[] elements= Arrays.copyOfRange(command, 1, command.length);
+        String[] elements = Arrays.copyOfRange(command, 1, command.length);
         ListyIteratorUpdated list = new ListyIteratorUpdated(elements);
 
-        while(!command[0].equals("END")) {
+        while (!command[0].equals("END")) {
             switch (command[0]) {
-                case "Print"  -> list.print();
+                case "Print" -> list.print();
                 case "Move" -> System.out.println(list.move());
                 case "HasNext" -> System.out.println(list.hasNext());
                 case "PrintAll" -> list.PrintAll();
