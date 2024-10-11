@@ -1,4 +1,4 @@
-package _10_ExamPrep._01_PiePursiut;
+package _10_ExamPrep._01_PiePursuit;
 
 import java.util.ArrayDeque;
 import java.util.Arrays;
