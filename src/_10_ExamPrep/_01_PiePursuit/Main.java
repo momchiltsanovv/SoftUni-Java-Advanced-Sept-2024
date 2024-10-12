@@ -11,16 +11,16 @@ public class Main {
         Scanner sc = new Scanner(in);
 
 
-        ArrayDeque<Integer> contestantsCapacity = new ArrayDeque<>();
-        Arrays.stream(sc.nextLine().split("\\s+")).mapToInt(Integer::parseInt).forEach(contestantsCapacity::offer);
+        ArrayDeque<Integer> contestantsQueue = new ArrayDeque<>();
+        Arrays.stream(sc.nextLine().split("\\s+")).mapToInt(Integer::parseInt).forEach(contestantsQueue::offer);
 
-        ArrayDeque<Integer> piesPieces = new ArrayDeque<>();
-        Arrays.stream(sc.nextLine().split("\\s+")).mapToInt(Integer::parseInt).forEach(piesPieces::push);
+        ArrayDeque<Integer> piesStack = new ArrayDeque<>();
+        Arrays.stream(sc.nextLine().split("\\s+")).mapToInt(Integer::parseInt).forEach(piesStack::push);
 
 
-        while (!contestantsCapacity.isEmpty() && !piesPieces.isEmpty()) {
-            int currentPies = piesPieces.pop();
-            int currentCapacity = contestantsCapacity.pop();
+        while (!contestantsQueue.isEmpty() && !piesStack.isEmpty()) {
+            int currentPies = piesStack.pop();
+            int currentCapacity = contestantsQueue.pop();
             if (currentPies == 0 || currentCapacity == 0) {
                 continue;
             }
@@ -29,34 +29,35 @@ public class Main {
                 currentCapacity -= currentPies;
 
                 if (currentCapacity > 0) {
-                    contestantsCapacity.offer(currentCapacity);
+                    contestantsQueue.offer(currentCapacity);
                 }
             } else {
                 currentPies -= currentCapacity;
 
                 if (currentPies > 1) {
-                    piesPieces.push(currentPies);
+                    piesStack.push(currentPies);
                 } else if (currentPies == 1) {
-                    if (!piesPieces.isEmpty() && currentPies == piesPieces.getLast()) {
+                    if (!piesStack.isEmpty() && currentPies == piesStack.getLast()) {
                         continue;
                     }
-                    if (!piesPieces.isEmpty()) {
-                        piesPieces.push(currentPies + piesPieces.pop());
+                    if (!piesStack.isEmpty()) {
+                        piesStack.push(currentPies + piesStack.pop());
                     } else {
-                        piesPieces.push(currentPies);
+                        piesStack.push(currentPies);
                     }
                 }
             }
         }
 
-        if (!contestantsCapacity.isEmpty()) {
+        if (!contestantsQueue.isEmpty()) {
             System.out.println("We will have to wait for more pies to be baked!");
-            System.out.println("Contestants left: " + contestantsCapacity.peek());
-        } else if (piesPieces.isEmpty()) {
+            System.out.println("Contestants left: " + contestantsQueue.peek());
+        } else if (piesStack.isEmpty()) {
             System.out.println("We have a champion!");
         } else {
+
             StringBuilder builder = new StringBuilder();
-            piesPieces.descendingIterator().forEachRemaining(pie -> builder.append(pie).append(", "));
+            piesStack.descendingIterator().forEachRemaining(pie -> builder.append(pie).append(", "));
             if (!builder.isEmpty()) {
                 builder.setLength(builder.length() - 2);
             }
