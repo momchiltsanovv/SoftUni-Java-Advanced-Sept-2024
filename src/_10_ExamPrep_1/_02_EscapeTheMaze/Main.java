@@ -1,4 +1,4 @@
-package _10_ExamPrep._02_EscapeTheMaze;
+package _10_ExamPrep_1._02_EscapeTheMaze;
 
 import java.util.Scanner;
 
