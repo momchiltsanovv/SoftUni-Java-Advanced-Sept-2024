@@ -20,6 +20,7 @@ public class Main {
 
         while (!beesQueue.isEmpty() && !beeEatersStack.isEmpty()) {
 
+
             int countBees = beesQueue.poll();
             int countBeeEaters = beeEatersStack.pop();
 
@@ -41,15 +42,15 @@ public class Main {
 
         print(beesQueue, beeEatersStack);
     }
-
     private static void print(Deque<Integer> beesQueue, Deque<Integer> beeEatersStack) {
+
         StringBuilder sb = new StringBuilder();
         sb.append("The final battle is over!\n");
 
         if (beesQueue.isEmpty() && beeEatersStack.isEmpty()) {
             sb.append("But no one made it out alive!");
         } else {
-            if(!beesQueue.isEmpty()) {
+            if (!beesQueue.isEmpty()) {
                 sb.append("Bee groups left: ");
                 beesQueue.forEach(pie -> sb.append(pie).append(", "));
             } else {
@@ -58,6 +59,8 @@ public class Main {
             }
             sb.setLength(sb.length() - 2);
         }
+
+
         System.out.println(sb);
     }
 }

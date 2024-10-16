@@ -9,8 +9,8 @@ public class Main {
         LaunchPad capeCanaveralAFS = new LaunchPad("Cape Canaveral Air Force Station", 5);
 //Initialize entities (Spacecraft)
         Spacecraft galileo = new Spacecraft("Galileo", "Orbiter", "Europa", "study Jupiter and its mysterious moons", 223);
-        Spacecraft cassini = new Spacecraft("Cassini-Huygens", "Orbiter", "Saturn", "analyze the composition and atmosphere of Saturn", 2523);
         Spacecraft magellan = new Spacecraft("Magellan", "Orbiter", "Venus", "image the entire surface of Venus", 3445);
+        Spacecraft cassini = new Spacecraft("Cassini-Huygens", "Orbiter", "Saturn", "analyze the composition and atmosphere of Saturn", 2523);
         Spacecraft huygens = new Spacecraft("Huygens", "Atmospheric Probe/Lander", "Titan", "provide a detailed study of Titan's atmosphere", 318);
         Spacecraft voyager1 = new Spacecraft("Voyager-1", "Multiple Flybys", "Outer Solar System", "chart the edge of interstellar space", 733);
 
