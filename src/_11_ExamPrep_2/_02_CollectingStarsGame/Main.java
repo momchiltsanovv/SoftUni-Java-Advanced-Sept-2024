@@ -55,6 +55,7 @@ public class Main {
         if (matrix[newPosition[0]][newPosition[1]] == '#') {
             starsCount--;
             return starsCount;
+            
         }
 
         // Update player position if it's a valid move
