@@ -1,4 +1,4 @@
-package _12_ExamPrep_3;
+package _12_ExamPrep_3._01_OffroadChallenge;
 
 import java.util.ArrayDeque;
 import java.util.ArrayList;
@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 import static java.lang.System.in;
 
-public class _01_OffroadChallenge {
+public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(in);
 
@@ -42,7 +42,7 @@ public class _01_OffroadChallenge {
             reachedAltitudes.add(altitude);
             System.out.printf("John has reached: Altitude %d\n", altitude);
 
-            //remove only if result >= necessaryAmount
+            //remove only if result >= necessaryAmount NOTE: if pop them from the beginning it gives 87/100 edge case if it's the last in the collections
             initialFuelStack.pop();
             consumptionIndexQueue.poll();
             necessaryAmountQueue.poll();
