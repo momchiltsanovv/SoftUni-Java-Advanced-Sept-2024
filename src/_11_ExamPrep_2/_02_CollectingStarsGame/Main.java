@@ -89,7 +89,6 @@ public class Main {
             for (int col = 0; col < matrix.length; ++col) {
                 if (matrix[row][col] == 'P') {
                     return new int[]{row, col};
-                    //asdas
                 }
             }
         }
