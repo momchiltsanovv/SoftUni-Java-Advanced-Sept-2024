@@ -1,12 +1,12 @@
-package surfers;
+package _11_ExamPrep_2._03_Surfers.surfers;
 
 public class Main {
     public static void main(String[] args) {
-//Initialize the repositories (Surfers.Beach)
         Beach malibu = new Beach("Malibu", 3);
         Beach playaLaRopa = new Beach("Playa La Ropa", 2);
         Beach veleka = new Beach("Veleka", 0);
-//Initialize entities (Surfer)
+
+
         Surfer john = new Surfer("John", 40, 10, true, 100);
         Surfer mike = new Surfer("Mike", 20, 1, false, 59);
         Surfer charlie = new Surfer("Charlie", 55, 19, true, 50);

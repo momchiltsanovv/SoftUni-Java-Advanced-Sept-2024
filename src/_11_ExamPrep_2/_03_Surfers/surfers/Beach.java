@@ -1,4 +1,4 @@
-package surfers;
+package _11_ExamPrep_2._03_Surfers.surfers;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -42,7 +42,7 @@ public class Beach {
 
     public String getMostExperiencedSurfer() {
         if (surfers.isEmpty()) {
-            return "There are no surfers.";
+            return "There are no _11_ExamPrep_2._03_Surfers.surfers.";
         }
 
         Surfer mostExperienced = surfers.getFirst();
@@ -74,7 +74,7 @@ public class Beach {
 
     public String getSurfersWithPersonalSurfboards() {
         if (surfers.isEmpty()) {
-            return "There are no surfers.";
+            return "There are no _11_ExamPrep_2._03_Surfers.surfers.";
         }
 
         StringBuilder sb = new StringBuilder("Surfers who have their own surfboards: ");
@@ -91,7 +91,7 @@ public class Beach {
             sb.setLength(sb.length() - 2); // Remove the last ", "
             return sb.toString();
         } else {
-            return "There are no surfers with their own surfboards.";
+            return "There are no _11_ExamPrep_2._03_Surfers.surfers with their own surfboards.";
         }
     }
 
@@ -99,10 +99,10 @@ public class Beach {
 
     public String getReport() {
         if (surfers.isEmpty()) {
-            return String.format("There are no surfers on %s beach.", name);
+            return String.format("There are no _11_ExamPrep_2._03_Surfers.surfers on %s beach.", name);
         }
         StringBuilder sb = new StringBuilder();
-        sb.append("Beach ").append(name).append(" was visited by the following surfers:\n");
+        sb.append("Beach ").append(name).append(" was visited by the following _11_ExamPrep_2._03_Surfers.surfers:\n");
         int counter = 1;
 
         for (Surfer surfer : surfers) {

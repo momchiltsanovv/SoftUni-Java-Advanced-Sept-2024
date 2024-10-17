@@ -1,4 +1,4 @@
-package surfers;
+package _11_ExamPrep_2._03_Surfers.surfers;
 
 public class Surfer {
 
