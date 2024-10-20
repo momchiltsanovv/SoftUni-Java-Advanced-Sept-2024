@@ -75,7 +75,6 @@ public class Main {
                 matrix[position[0]][position[1]] = '*';
                 break;
             }
-
             command = sc.nextLine();
         }
 
