@@ -23,7 +23,7 @@ public class Main {
 
         while (true) {
             switch (command) {
-                case "up" -> {
+                case "up" -> { // 
                     position[0]--;
                     if (position[0] < 0) {
                         position[0]++;
@@ -31,7 +31,7 @@ public class Main {
                 }
                 case "down" -> {
                     position[0]++;
-                    if (position[0] >= matrix.length) {
+                    if (position[0] >= matrix.length) { 
                         position[0]--;
                     }
                 }
@@ -126,4 +126,7 @@ public class Main {
         }
         return matrix;
     }
+
+
 }
+
